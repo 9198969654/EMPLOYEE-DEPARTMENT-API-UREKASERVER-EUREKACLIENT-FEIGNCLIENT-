@@ -23,5 +23,39 @@ public class DepartmentController {
        return new ResponseEntity<>(savedDepartment, HttpStatus.CREATED);
     }
 
+    //build  get Department Rest Api
+    @GetMapping("{department-code}")
+    public ResponseEntity<DepartmentDto> getDepartment(@PathVariable("department-code") String departmentCode){
+       DepartmentDto departmentDto =  departmentService.getDepartmentByCode(departmentCode);
+       return new ResponseEntity<>(departmentDto,  HttpStatus.OK);
+    }
+
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -10,9 +10,7 @@ import org.springframework.stereotype.Service;
 @Service
 @AllArgsConstructor
 public class DepartmentServiceImpl implements DepartmentService {
-
     private DepartmentRepository departmentRepository;
-
     @Override
     public DepartmentDto saveDepartment(DepartmentDto departmentDto) {
 
@@ -33,7 +31,19 @@ public class DepartmentServiceImpl implements DepartmentService {
                savedDepartment.getDepartmentDescription(),
                savedDepartment.getDepartmentCode()
        );
-
         return savedDepartmentDto;
+    }
+
+    @Override
+    public DepartmentDto getDepartmentByCode(String departmentCode) {
+
+        Department department = departmentRepository.findByDepartmentCode(departmentCode);
+        DepartmentDto departmentDto = new DepartmentDto(
+                department.getId(),
+                department.getDepartmentName(),
+                department.getDepartmentDescription(),
+                department.getDepartmentCode()
+        );
+        return departmentDto;
     }
 }
