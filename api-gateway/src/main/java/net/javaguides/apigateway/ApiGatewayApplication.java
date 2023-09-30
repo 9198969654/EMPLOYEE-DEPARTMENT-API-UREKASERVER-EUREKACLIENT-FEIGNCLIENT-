@@ -1,4 +1,4 @@
-package net.javaguides.departmentservice;
+package net.javaguides.apigateway;
 
 import net.javaguides.employeeservice.EnableEurekaClient;
 import org.springframework.boot.SpringApplication;
@@ -6,11 +6,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 @EnableEurekaClient
-public class DepartmentServiceApplication {
-
+public class ApiGatewayApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DepartmentServiceApplication.class, args);
+		SpringApplication.run(ApiGatewayApplication.class, args);
 	}
 
 }
